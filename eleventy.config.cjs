@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig){
 	eleventyConfig.addPassthroughCopy({
 		"./node_modules/@picocss/pico/css/pico.min.*": "./",
 	}, {debug: true})
+	eleventyConfig.addPassthroughCopy("**/*.jpg");
 
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 }

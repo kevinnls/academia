@@ -1,17 +1,21 @@
 <!doctype html>
 <html>
 	<head>
-		<title>{{ site.name }}</title>
+		{%if title %}
+			<title>{{ title | append: " | " | append: site.name }}</title>
+		{%else%}
+			<title>{{ site.name }}</title>
+		{%endif%}
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="description" content="{{ desc | default: site.desc }}">
 		<link rel="stylesheet" href="/pico.min.css">
 	</head>
-	<body class=".grid" style="min-width:100dvh;min-width:100vh;">
+	<body class=".grid" style="min-height:100dvh;min-height:100vh;">
 		<header>
 			<h1>{{ site.name }}</h1>
 		</header>
-		<main>
+		<main style="padding:var(--block-spacing-vertical) var(--block-spacing-horizontal);">
 		{{ content }}
 		</main>
 		<footer>

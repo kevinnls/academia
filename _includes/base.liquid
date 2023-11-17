@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ site.name }}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="description" content="{{ desc | default: site.desc }}">
+		<link rel="stylesheet" href="/pico.min.css">
+	</head>
+	<body class=".grid" style="min-width:100dvh;min-width:100vh;">
+		<header>
+			<h1>{{ site.name }}</h1>
+		</header>
+		<main>
+		{{ content }}
+		</main>
+		<footer>
+		</footer>
+	</body>
+</html>

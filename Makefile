@@ -1,4 +1,4 @@
-PROJ = 
+PROJ = aca.kevinnlsamuel.com
 
 ifndef PROJ
 $(error variable $$PROJ needs to be defined)

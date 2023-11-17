@@ -12,7 +12,7 @@ POD_MOUNTS = \
 	-v $(PWD):/app:z \
 	-v pnpm-global:/usr/local:Z \
 	-v pnpm-store:/usr/local/share/pnpm:Z \
-	-v pnpm-config:/node/.config/pnpm:Z \
+	-v pnpm-config:/root/.config/pnpm:Z \
 	-v $(PROJ)_modules:/app/node_modules:z
 
 POD_OPTIONS_TEMPLATE = \

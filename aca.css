@@ -1,0 +1,10 @@
+.bib header {
+	font-weight: bold;
+}
+.bib ul {
+	margin-left: 3ch;
+}
+.bib ul li {
+	text-indent: -3ch;
+	list-style: none;
+}

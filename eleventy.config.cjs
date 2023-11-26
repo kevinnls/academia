@@ -1,3 +1,4 @@
+const { inspect } = require("node:util");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig){
@@ -11,4 +12,9 @@ module.exports = function(eleventyConfig){
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
 
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+	eleventyConfig.addFilter(
+		"debug",
+		(content) => `<pre>${inspect(content)}</pre>`
+	);
 }

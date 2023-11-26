@@ -1,6 +1,9 @@
 ---
 title: Le méta-théâtre dans « Au bout du rouleau »
 layout: base
+desc: >
+    Analyse des traits du méta-théâtre dans la pièce de
+    Jean-Pierre Martinez
 ---
 # {{title}}
 

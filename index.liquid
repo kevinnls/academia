@@ -1,0 +1,26 @@
+---
+eleventyExcludeFromCollections: true
+layout: base.liquid
+title: Kevin's Academic Works
+---
+
+{% assign recents = collections.all | slice: 0, 5 %}
+
+<ul style="list-style:none">
+	{% for post in recents reversed %}
+		<li style="list-style:none;">
+			<article>
+				<header style="--font-size:20px">
+					<a href={{post.url}}>{{ post.data.title }}</a>
+				</header>
+				{{post.data.desc}}
+				<footer style="--form-element-spacing-vertical:5px;--form-element-spacing-horizontal:5px;">
+					{% for tag in post.data.tags %}
+						<a role="button" class="secondary outline" href="#">{{tag}}</a>
+					{% endfor %}
+				</footer>
+			</article>
+		</li>
+	{% endfor %}
+</ul>
+

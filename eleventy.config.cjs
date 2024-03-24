@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig){
 		(content) => `<pre>${inspect(content)}</pre>`
 	);
 
-	if(process.env.NODE_ENV==="production"){
+	if(process.env.NODE_ENV==="deployment"){
 		eleventyConfig.addGlobalData('date', 'git Last Modified');
 	}
 }

@@ -34,6 +34,12 @@ run:
 	podman run $(POD_OPTIONS_TEMPLATE) pnpm run $(SCRIPT)
 
 
+setup: SCRIPT = setup
+setup:
+	podman run $(POD_OPTIONS_TEMPLATE) sh -c 'command -v pnpm || npm install -g pnpm'
+	podman run $(POD_OPTIONS_TEMPLATE) pnpm config set store-dir /usr/local/share/pnpm --global
+	podman run $(POD_OPTIONS_TEMPLATE) pnpm install
+
 sh: CONTAINER_TAG = sh
 sh:
 	podman run $(POD_OPTIONS_TEMPLATE) sh

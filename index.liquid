@@ -4,10 +4,10 @@ layout: base.liquid
 title: Kevin's Academic Works
 ---
 
-{% assign recents = collections.all | slice: 0, 5 %}
+{% assign recents = collections.all | sort: 'page.date' | reverse | slice: 0, 5 %}
 
 <ul style="list-style:none">
-	{% for post in recents reversed %}
+	{% for post in recents %}
 		<li style="list-style:none;">
 			<article>
 				<header style="--font-size:20px">

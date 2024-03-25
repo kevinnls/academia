@@ -11,6 +11,13 @@ module.exports = function(eleventyConfig){
 	}, {debug: true})
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
 
+	eleventyConfig.addTemplateFormats("scss");
+	eleventyConfig.addExtension("scss", {
+		outputFileExtension: "css",
+		compile: async function(input) {
+			return async (data) => { require("sass").compileString(input).css };
+		},
+	});
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
 	eleventyConfig.addFilter(

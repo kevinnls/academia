@@ -6,6 +6,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@picocss/pico": "^2.0.6",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "sass": "^1.72.0"
   }
 }

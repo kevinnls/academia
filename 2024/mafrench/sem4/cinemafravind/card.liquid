@@ -1,0 +1,12 @@
+<h1 style="grid-row:{{index}};" class="year">{{year}}</h1>
+
+{% assign langs = "fr,in" | split: "," %}
+{%- for lang in langs -%}
+	{%- if event[lang] -%}
+		<article style="grid-row:{{index}};" class="{{lang}}">
+			{{-event[lang]-}}
+		</article>
+	{%- else -%}
+		<p style="grid-row:{{index}};" class="invisible {{lang}}">
+	{%- endif -%}
+{%- endfor -%}

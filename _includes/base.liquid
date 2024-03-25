@@ -12,14 +12,19 @@
 		<link rel="stylesheet" href="/3rdparty/pico.min.css">
 		<link rel="stylesheet" href="/aca.css">
 	</head>
-	<body class=".grid" style="min-height:100dvh;min-height:100vh;">
-		<header>
-			<h1>{{ site.name }}</h1>
-		</header>
-		<main class="container">
+	<body style="min-height:100dvh;min-height:100vh;display:flex;flex-direction:column;">
+		{%- unless header==false -%}
+			<header style="padding-left:var(--pico-block-spacing-horizontal);padding-right:var(--pico-block-spacing-horizontal);">
+				<h1><a style="text-decoration:none" href="/">{{ site.name }}</a></h1>
+			</header>
+		{%- endunless -%}
+		<main class="container" style="flex-grow:2;">
 		{{ content }}
 		</main>
-		<footer>
+		{%- unless footer==false -%}
+		<footer style="text-align:center">
+			&copy; Kevin Samuel
 		</footer>
+		{%- endunless -%}
 	</body>
 </html>

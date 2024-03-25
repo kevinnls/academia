@@ -4,7 +4,14 @@
 {%- for lang in langs -%}
 	{%- if event[lang] -%}
 		<article style="grid-row:{{index}};" class="{{lang}}">
-			{{-event[lang]-}}
+			{%- if event.dates[lang] -%}
+				{% assign date = event.dates[lang] %}
+				{%- date date -%}
+			{%- endif -%}
+
+			{%- markdownify -%}
+				{{event[lang]-}}
+			{%- endmarkdownify -%}
 		</article>
 	{%- else -%}
 		<p style="grid-row:{{index}};" class="invisible {{lang}}">

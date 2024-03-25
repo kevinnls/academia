@@ -19,6 +19,15 @@ module.exports = function(eleventyConfig){
 	eleventyConfig.addDataExtension("yml,yaml", (content) => {
 		return require('js-yaml').load(content)
 	})
+	eleventyConfig.addPairedShortcode("markdownify", function async (content) {
+		return require('markdown-it')().render(content);
+	})
+	eleventyConfig.addShortcode("date", function async (date) {
+		return `<time datetime=${date.toJSON()}>
+			${date.toLocaleDateString('fr-FR',
+				{year: 'numeric', month: 'long', day: 'numeric'}
+		)}</time>`
+	})
 
 	if(process.env.NODE_ENV==="deployment"){
 		eleventyConfig.addGlobalData('date', 'git Last Modified');

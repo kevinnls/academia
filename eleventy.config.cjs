@@ -16,6 +16,9 @@ module.exports = function(eleventyConfig){
 		"debug",
 		(content) => `<pre>${inspect(content)}</pre>`
 	);
+	eleventyConfig.addDataExtension("yml,yaml", (content) => {
+		return require('js-yaml').load(content)
+	})
 
 	if(process.env.NODE_ENV==="deployment"){
 		eleventyConfig.addGlobalData('date', 'git Last Modified');

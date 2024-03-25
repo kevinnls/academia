@@ -3,8 +3,7 @@ eleventyExcludeFromCollections: true
 layout: base.liquid
 title: Kevin's Academic Works
 ---
-
-{% assign recents = collections.all | sort: 'page.date' | reverse | slice: 0, 5 %}
+{% assign recents = collections.all | where: "data.hide_from_home", null | sort: 'page.date' | reverse | slice: 0, 5 %}
 
 <ul style="list-style:none">
 	{% for post in recents %}
